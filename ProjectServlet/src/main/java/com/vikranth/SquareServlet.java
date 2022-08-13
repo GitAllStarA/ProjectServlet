@@ -13,11 +13,12 @@ public class SquareServlet extends HttpServlet {
 	
 	
 			
-			int k = (int) req.getAttribute("k");
-			k = k*k;
+			int k =  Integer.parseInt(req.getParameter("k"));
+			 k = k*k;
 			PrintWriter out = res.getWriter();
-			out.println("result : "+k);
+			 out.println("hey i was called / redirect by pervious servlet response object & result is "+k);
 			
+		System.out.println("hey i was called / redirect by pervious servlet response object & result is  "+k);
 	
 	}
 }

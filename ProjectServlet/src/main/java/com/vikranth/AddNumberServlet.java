@@ -40,7 +40,6 @@ public class AddNumberServlet extends HttpServlet {
 		
 		
 		//Now just redirecting the client request to ohter servlet
-		
 		res.sendRedirect("sqr?k="+k);  // url  rewriting
 		
 		

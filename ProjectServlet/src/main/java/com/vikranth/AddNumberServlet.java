@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class AddNumberServlet extends HttpServlet {
 
@@ -40,8 +41,19 @@ public class AddNumberServlet extends HttpServlet {
 		
 		
 		//Now just redirecting the client request to ohter servlet
-		res.sendRedirect("sqr?k="+k);  
 		// url  rewriting
+		
+		//res.sendRedirect("sqr?k="+k);  
+		
+		
+		// creating tomcat session object, session stores reqs (clients) data
+		HttpSession session = req.getSession();
+		
+		// setting session attributes
+		session.setAttribute("k", k);
+		
+		res.sendRedirect("sqr");
+		
 		
 		
 		

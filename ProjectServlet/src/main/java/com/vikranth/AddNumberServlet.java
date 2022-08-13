@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,11 +48,18 @@ public class AddNumberServlet extends HttpServlet {
 		
 		
 		// creating tomcat session object, session stores reqs (clients) data
-		HttpSession session = req.getSession();
+		//HttpSession session = req.getSession();
 		
 		// setting session attributes
-		session.setAttribute("k", k);
+		//session.setAttribute("k", k);
 		
+		// it is from server (res) 
+		Cookie cookie = new Cookie("k", String.valueOf(k));
+		
+		// adding to response 
+		res.addCookie(cookie);
+		
+		// sharing cookie to the next servlet via redirect
 		res.sendRedirect("sqr");
 		
 		

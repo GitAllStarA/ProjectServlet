@@ -17,6 +17,7 @@ public class AddNumberServlet extends HttpServlet {
     	String j = req.getParameter("t2");
 		int k = Integer.parseInt(i) + Integer.parseInt(j) ;
 
+
 		//System.out.println(i + " + " + j + " = " + k);
 		
 		//System.out.println("hello");

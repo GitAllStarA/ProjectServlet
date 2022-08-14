@@ -5,6 +5,13 @@
 			<servlet> 
 				<servlet-name>addNum</servlet-name>
 				<servlet-class>com.vikranth.AddNumberServlet</servlet-class>
+				
+				<!--  these are specific to call-->
+				<init-param>
+					<param-name>Add</param-name>
+					<param-value>Added number is shown here</param-value>
+				</init-param>
+				
 			</servlet>
 			
 			
@@ -18,11 +25,31 @@
 			<servlet>
 				<servlet-name>sqr</servlet-name>
 				<servlet-class>com.vikranth.SquareServlet</servlet-class>
+				
+								<!--  these are specific to call-->
+				
+				<init-param>
+					<param-name>square</param-name>
+					<param-value>squared number is shown here</param-value>
+				</init-param>
+				
 			</servlet>
 			
 			<servlet-mapping>
 				<servlet-name>sqr</servlet-name>
 				<url-pattern>/sqr</url-pattern>
 			</servlet-mapping>
+	
+	
+	<!--  these are available for all the servlet see in the AddNumberServlet class-->
+			<context-param>
+				<param-name>name</param-name>
+				<param-value>vicky</param-value>
+			</context-param>
+	
+	<context-param>
+				<param-name>Phone</param-name>
+				<param-value>iphone</param-value>
+			</context-param>
 	
 </web-app>

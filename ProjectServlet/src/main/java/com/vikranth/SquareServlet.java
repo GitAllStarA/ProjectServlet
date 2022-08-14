@@ -2,14 +2,14 @@ package com.vikranth;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.CookieStore;
-import java.util.Iterator;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
 
 public class SquareServlet extends HttpServlet {
 	
@@ -41,6 +41,18 @@ public class SquareServlet extends HttpServlet {
 			 out.println("hey i was called / redirect by pervious servlet response object & result is "+k);
 			
 		System.out.println("hey i was called / redirect by pervious servlet response object & result is  "+k);
+		
+		
+		ServletConfig cfgConfig = getServletConfig();
+		String xString = cfgConfig.getInitParameter("square");
+		
+		
+		
+		ServletContext context = req.getServletContext();
+		String value = context.getInitParameter("name");
+		out.println(value);
+		out.println(xString);
+		
 	
 	}
 }

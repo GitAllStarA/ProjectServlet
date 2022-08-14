@@ -5,12 +5,16 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 //import javax.servlet.http.HttpSession;
 
+
+
+@WebServlet("/sqr")
 public class SquareServlet extends HttpServlet {
 	
 	public void doGet( HttpServletRequest req, HttpServletResponse res) throws IOException  {
@@ -42,16 +46,16 @@ public class SquareServlet extends HttpServlet {
 			
 		System.out.println("hey i was called / redirect by pervious servlet response object & result is  "+k);
 		
+//		
+//		ServletConfig cfgConfig = getServletConfig();
+//		String xString = cfgConfig.getInitParameter("square");
+//		
 		
-		ServletConfig cfgConfig = getServletConfig();
-		String xString = cfgConfig.getInitParameter("square");
 		
-		
-		
-		ServletContext context = req.getServletContext();
-		String value = context.getInitParameter("name");
-		out.println(value);
-		out.println(xString);
+//		ServletContext context = req.getServletContext();
+//		String value = context.getInitParameter("name");
+//		out.println(value);
+//		out.println(xString);
 		
 	
 	}

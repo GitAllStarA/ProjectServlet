@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/add")
+//@WebServlet("/add")
 public class AddNumberServlet extends HttpServlet {
 
 	public void doGet( HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
